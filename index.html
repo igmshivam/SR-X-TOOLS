@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Tools Hub</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="stylishNames.js"></script>
+    <script src="igBios.js"></script>
+    <script src="symbols.js"></script>
+    <script src="colorCodes.js"></script>
+    
+    <script src="main.js"></script>
+</head>
+<body>
+    <div id="toast-container"></div>
+
+    <header>
+        <h1>🔥 SHIVAM TOOLS HUB</h1>
+        <div class="biz-container">
+            <div class="biz-card" onclick="document.getElementById('my-footer').scrollIntoView({behavior: 'smooth'})">🌐 Premium Services</div>
+        </div>
+
+        <div class="categories">
+            <button onclick="jumpTo('stylish-name')">Stylish Name</button>
+            <button onclick="jumpTo('fancy-text')">Fancy Text</button>
+            <button onclick="jumpTo('color-code')">Color Code</button>
+            <button onclick="jumpTo('ig-bio')">IG Bio</button>
+            <button onclick="jumpTo('symbol-hub')">Symbols</button>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLScy6zXbVur0_2taz4bIQka9XB1HBfdNK-vHWbD_uDc_4_kSYA/viewform?embedded=true" 
+            width="100%" height="520" frameborder="0" style="border-radius:12px; margin-top:15px;">
+            Loading…
+        </iframe>
+
+        <div class="rules-box">  
+            <h3>⚠️ IMPORTANT RULES</h3>  
+            <p>Naam likhne ke baad <b>"REFRESH"</b> button dabayein!</p>
+        </div>
+
+        <section id="stylish-name">
+            <h2>Stylish Name Generator</h2>
+            <div class="search-box"><input type="text" id="searchStylish" placeholder="Type name..." onkeyup="resetAndDisplay('stylish')"></div>
+            <div class="count-container"><div id="count-stylish" class="count-badge">Total: 0</div></div>
+            <div class="refresh-container"><button class="refresh-btn" onclick="nextBatch('stylish')">🔄 Refresh</button></div>
+            <div class="item-list" id="stylishList"></div>
+        </section>
+
+        <section id="fancy-text">
+            <h2>Fancy Text Generator</h2>
+            <div class="search-box"><input type="text" id="searchFancy" placeholder="Type text..." onkeyup="renderFancy()"></div>
+            <div class="count-container"><div id="count-fancy" class="count-badge">Total Styles: 0</div></div>
+            <div class="item-list" id="fancyList"></div>
+        </section>
+
+        <section id="color-code">
+            <h2>Color Codes Hub</h2>
+            <div class="search-box"><input type="text" id="searchColor" placeholder="Search color..." onkeyup="resetAndDisplay('color')"></div>
+            <div class="count-container"><div id="count-color" class="count-badge">Total: 0</div></div>
+            <div class="refresh-container"><button class="refresh-btn" onclick="nextBatch('color')">🔄 Refresh</button></div>
+            <div class="item-list" id="colorList"></div>
+        </section>
+
+        <section id="ig-bio">
+            <h2>Instagram Bio</h2>
+            <div class="search-box"><input type="text" id="searchBio" placeholder="Enter name..." onkeyup="resetAndDisplay('bio')"></div>
+            <div class="count-container"><div id="count-bio" class="count-badge">Total: 0</div></div>
+            <div class="refresh-container"><button class="refresh-btn" onclick="nextBatch('bio')">🔄 Refresh</button></div>
+            <div class="item-list" id="bioList"></div>
+        </section>
+
+        <section id="symbol-hub">
+            <h2>Symbols & Decoration</h2>
+            <div class="search-box"><input type="text" id="searchSymbol" placeholder="Search symbols..." onkeyup="resetAndDisplay('symbol')"></div>
+            <div class="count-container"><div id="count-symbol" class="count-badge">Total: 0</div></div>
+            <div class="refresh-container"><button class="refresh-btn" onclick="nextBatch('symbol')">🔄 Refresh</button></div>
+            <div class="item-list" id="symbolList"></div>
+        </section>
+    </div>
+
+    <footer id="my-footer">
+        <h4 style="color: #1E90FF; margin-bottom: 15px; font-size: 14px; letter-spacing: 1px;">📩 PREMIUM SERVICES</h4>
+        
+        <div class="biz-container" style="justify-content: center; margin-bottom: 20px;">
+            <button onclick="orderService('Web Design')" class="copy-btn">🌐 Web Design</button>
+            <button onclick="orderService('Logo Design')" class="copy-btn">🎨 Logo Design</button>
+            <button onclick="orderService('Promotion')" class="copy-btn">🚀 Promotion</button>
+        </div>
+
+        <div class="modal-body" style="text-align: left; background: #fff; border: 1px solid #eee; border-radius: 15px; padding: 10px;">
+            <div class="cat-title" style="font-weight: 900; color: #1E90FF; margin: 10px 0; border-left: 4px solid #1E90FF; padding-left: 8px;">🌐 WEB DEVELOPMENT</div>
+            <div class="item"><span>1-Page Website</span><b>₹99</b></div>
+            <div class="item"><span>Stylish Portfolio</span><b>₹199</b></div>
+            <div class="item"><span>Business Landing Page</span><b>₹399</b></div>
+            
+            <div class="cat-title" style="font-weight: 900; color: #1E90FF; margin: 20px 0 10px; border-left: 4px solid #1E90FF; padding-left: 8px;">📈 PROMOTION & GROWTH</div>
+            <div class="item"><span>YT SEO Setup</span><b>₹249</b></div>
+            <div class="item"><span>IG Account Audit</span><b>₹99</b></div>
+
+            <div class="cat-title" style="font-weight: 900; color: #1E90FF; margin: 20px 0 10px; border-left: 4px solid #1E90FF; padding-left: 8px;">💎 SELLING & DESIGN</div>
+            <div class="item"><span>Digital Business Card</span><b>₹99</b></div>
+            <div class="item"><span>Premium Logo Design</span><b>₹199</b></div>
+        </div>
+
+        <button onclick="document.getElementById('emailModal').style.display='block'" class="refresh-btn" style="width:100%; margin-top: 20px;">ORDER VIA EMAIL</button>
+
+        <div style="margin-top: 40px;">
+            <h2>𝕊𝕙𝕚𝕧𝕒𝕞 𝕋𝕠𝕠𝕝𝕤 ℍ𝕦𝕓 🛠️</h2>
+            <p>© 2026 SHIVAM RATHAUR</p>
+        </div>
+    </footer>
+
+    <div id="emailModal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999;">
+        <div class="modal-box" style="background:white; width:85%; margin:100px auto; border-radius:20px; padding:20px; text-align:center;">
+            <h2 style="color:#ea4335; margin-bottom: 10px;">✉️ CONTACT SHIVAM</h2>
+            <p>Ready to Order? Click below to send an email.</p>
+            <button onclick="window.location.href='mailto:shivamhelp.hub@gmail.com?subject=Service Order&body=Hi Shivam, I want to buy your service.'" class="copy-btn" style="background:#ea4335; width:100%; padding:12px;">OPEN GMAIL & SEND</button>
+            <button onclick="document.getElementById('emailModal').style.display='none'" style="margin-top:15px; border:none; background:none; color:#999;">CLOSE</button>
+        </div>
+    </div>
+
+</body>
+</html>
